@@ -50,11 +50,20 @@ I use [UNetbootin](https://unetbootin.github.io/) for writing my images.
 
 I use [Gparted](http://gparted.org/download.php) to format my pendrive to FAT32.
 
-## Add to the bootable pendrive the latest Gparted version (0.24)
-Download from [ubuntuupdates.org gparted](http://www.ubuntuupdates.org/package/getdeb_apps/trusty/apps/getdeb/gparted). Scroll down to `Download "gparted"` and click on 64-bit deb package. The direct link is [here](http://archive.getdeb.net/ubuntu/pool/apps/g/gparted/gparted_0.24.0-1~getdeb1_amd64.deb) which may or not work.
+## Add to the bootable pendrive the latest Gparted version (0.24) and a couple of things more
+The easiest way is to just clone or download this repo to get the files you'll need later on.
 
-Copy `gparted_0.24.0-1~getdeb1_amd64.deb` to the pendrive root into a new folder, I created one called
-`gparted_deb`. You'll need it.
+You can download it either doing:
+```
+git clone https://github.com/awesomebytes/alienware15r3_ubuntu14
+```
+
+Or clicking in `Clone or download` > `Download ZIP`.
+
+The gparted debian came from [ubuntuupdates.org gparted](http://www.ubuntuupdates.org/package/getdeb_apps/trusty/apps/getdeb/gparted). Direct link is [here](http://archive.getdeb.net/ubuntu/pool/apps/g/gparted/gparted_0.24.0-1~getdeb1_amd64.deb) which may or not work.
+
+Copy the repo to the pendrive root folder into a new folder, I created one called
+`alienware_stuff`. You'll need it later on.
 
 
 ## Boot from the live linux pendrive
@@ -69,7 +78,7 @@ newest Gparted.
 To install it, open a terminal (Control+Alt+T) and:
 ```
 cd /cdrom
-cd gparted_deb # Or whatever you called the folder
+cd alienware_stuff # Or whatever you called the folder
 sudo dpkg -i gparted_0.24.0-1~getdeb1_amd64.deb
 ```
 
@@ -103,18 +112,17 @@ Now you can click `Install Now`.
 In a few minutes you should be good to go!
 
 ## Install Wifi and Ethernet
+Once rebooted and in your freshly installed Ubuntu 14.04, you'll need to copy some files from the bootable pendrive.
+
 For the Wifi card QCA6174 you need a newer binary of the firmware (based on [this askubuntu post](http://askubuntu.com/questions/607707/ath10k-installation)).
 
 Just copy the folder of this repo [QCA6174](QCA6174) to `/lib/firmware/ath10k`. Note that you'll be
-overwriting what is already there.
+overwriting what is already there. 
 
-You can download it either doing:
-
+```bash
+cd /media/YOURUSER/YOURPENDRIVE/alienware_stuff
+sudo cp -r QCA6174 /lib/firmware/ath10k
 ```
-git clone https://github.com/awesomebytes/alienware15r3_ubuntu14
-```
-
-Or clicking in `Clone or download` > `Download ZIP`.
 
 Once done, reboot. Wifi and Ethernet will be working after.
 
