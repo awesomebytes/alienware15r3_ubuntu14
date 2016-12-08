@@ -151,7 +151,7 @@ whatever that needs to run in the nvidia card for CUDA.
 Instructions next:
 
 ## Installing CUDA (and nvidia driver) and forcing usage of Intel card
-Download from Nvidia [Cuda 8.0](https://developer.nvidia.com/cuda-downloads):
+Download from Nvidia [Cuda 8.0](https://developer.nvidia.com/cuda-downloads), this is based on [jayakumar blog post](https://www.jayakumar.org/linux/gtx-1070-on-ubuntu-16-04-with-cuda-8-0-and-theano/):
 
 ```bash
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
