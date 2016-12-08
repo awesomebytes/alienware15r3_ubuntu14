@@ -119,3 +119,7 @@ Checking `dmesg` it complained about not having `nss-myhostname`.
     sudo apt-get install libnss-myhostname
 
 Solves it.
+
+There is a tool to change the colors of the LEDs for Alienware 17 that should be easy to make it work on this laptop:
+https://github.com/acyed/qtFx
+
