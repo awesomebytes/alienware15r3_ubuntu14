@@ -1,6 +1,11 @@
 # How to install Ubuntu 14.04.05 on Alienware 15 R3
 
-Tiny guide to install Ubuntu 14.04.05 on a brand new Alienware 15 R3.
+Guide to install Ubuntu 14.04.05 on a brand new Alienware 15 R3 to dual boot
+with Windows 10 and be able to run CUDA code on the Nvidia GeForce 1070 GTX.
+
+The major part of this guide may be useful for Ubuntu 16.04.
+
+I hope it helps someone else, it took me **12 straight hours** to get it working!
 
 ## Let windows 10 install
 Just next, next, next filling up your data.
