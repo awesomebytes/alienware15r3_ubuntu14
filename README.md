@@ -132,6 +132,8 @@ cudaGetDeviceCount returned 35
 -> CUDA driver version is insufficient for CUDA runtime version
 Result = FAIL
 ```
+Which by the way you will get when you forget to prepend `optirun` to
+whatever that needs to run in the nvidia card for CUDA.
 
 Instructions next:
 
@@ -222,6 +224,33 @@ Another demo:
 cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/bandwidthTest
 make
 optirun ./bandwidthTest
+```
+
+Which gave me:
+```
+optirun ./bandwidthTest 
+[CUDA Bandwidth Test] - Starting...
+Running on...
+
+ Device 0: GeForce GTX 1070
+ Quick Mode
+
+ Host to Device Bandwidth, 1 Device(s)
+ PINNED Memory Transfers
+   Transfer Size (Bytes)	Bandwidth(MB/s)
+   33554432			6230.3
+
+ Device to Host Bandwidth, 1 Device(s)
+ PINNED Memory Transfers
+   Transfer Size (Bytes)	Bandwidth(MB/s)
+   33554432			6346.4
+
+ Device to Device Bandwidth, 1 Device(s)
+ PINNED Memory Transfers
+   Transfer Size (Bytes)	Bandwidth(MB/s)
+   33554432			192311.3
+
+Result = PASS
 ```
 
 For other demos you may need to install:
