@@ -110,4 +110,12 @@ overwriting what is already there.
 
 And reboot. Wifi and Ethernet will be working after.
 
+## Installing Nvidia
+TODO.
 
+## Further notes
+Checking `dmesg` it complained about not having `nss-myhostname`.
+
+    sudo apt-get install libnss-myhostname
+
+Solves it.
