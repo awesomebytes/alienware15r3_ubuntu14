@@ -100,7 +100,7 @@ Now you should see some partitions like `/dev/nvme0n1`. If you don't, you missed
 Now choose the free space partition that corresponds to the shrinked space we made before. For me it's
 115343 MB. I'll just make a partition for `/` and another `swap` one.
 
-In order to be able to hibernate in Ubuntu you'll need at least your amount of RAM as swap. I doubt very much it will actually work, but hey, you need to try.
+In order to be able to suspend in Ubuntu you'll need at least your amount of RAM as swap. I doubt very much it will actually work, but hey, you need to try.
 
 I have 16GB of RAM so I'll do 115343 - 17 * 1024 = 97884 MB partition. (Yeah that's a 17, I'm a bit
 lazy to check for how much exactly it should be).
