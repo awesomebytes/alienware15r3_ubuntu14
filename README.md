@@ -513,5 +513,73 @@ optirun python test_tflearn.py
 ```
 
 
+# How to use only the nvidia 1070 GTX card on Alienware 15 R3
+Or how to disable Intel HD 530 card.
 
+You may want this if you:
+* Want to ONLY use the nvidia card.
+* Want to use an external monitor (it will enable HDMI and display port).
+* Want to use HTC Vive or Steam as it needs to go thru the nVidia card.
+* You want to use these instructions to honor the long hours I spent writing them.
+
+You need to still have Windows 10 with the alienware and Nvidia drivers installed.
+
+You need to press `Fn+F7` which is the `I/D GFX` key. Windows will ask you if you want
+to switch to using the discrete graphics card and to reboot if so. Accept.
+
+*Be warned that this change does not appear in the BIOS or anywhere else, and it can only
+be undone from Windows doing the same thing again.*
+
+Reboot and log into Windows, it will figure out the hardware change and just work.
+
+Now you can reboot again to log into Ubuntu, but on the grub screen you'll need to press
+`e` on your Ubuntu grub line to display the editing of boot string options.
+
+You'll need to add just before `quiet splash` the word `nomodeset` so it will look like:
+`nomodeset quiet splash`. Then press F10 to boot into it.
+
+The graphical system will fail and if you try to login you won't be able, go to a console
+pressing `Control+Alt+F2`, login with your username and password.
+
+Now we'll uninstall anything related to bumblebee.
+
+```
+sudo apt-get remove bumblebee
+```
+It will remove `bumblebee bumblebee-nvidia primus`.
+
+Now we reinstall the nvidia-367 driver.
+```
+sudo apt-get install --reinstall nvidia-367
+```
+
+Now we will add to grub the `nomodeset` option so we don't need to do it manually anymore.
+
+Edit `/etc/default/grub` (`sudo nano /etc/default/grub`) and add to `GRUB_CMDLINE_LINUX_DEFAULT` to make it look like: `GRUB_CMDLINE_LINUX_DEFAULT="nomodeset quiet splash"` save with `Control+O`, then Enter, then `Control+X`.
+
+Now update grub with:
+```
+sudo update-grub
+```
+
+And reboot.
+
+
+Apparently you need to remove everything from nvidia first.
+```
+sudo apt-get purge nvidia* cuda* bumblebee*
+```
+
+Reboot, now you can login (in crappy graphics) and execute:
+```
+sudo apt-get install nvidia-367
+```
+
+Go to a system shell `Control+Alt+F2` login and do:
+```
+sudo service lightdm restart
+```
+Or reboot.
+
+Now you are only using the nvidia card!
 
