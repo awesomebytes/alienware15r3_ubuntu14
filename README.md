@@ -458,7 +458,7 @@ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 sudo pip install /tmp/tensorflow_pkg/tensorflow-1.0.1-cp27-none-linux_x86_64.whl
 ```
 
-You can find my `tensorflow-0.12.0rc0-cp27-none-linux_x86_64.whl` in the [releases section](https://github.com/awesomebytes/alienware15r3_ubuntu14/releases) (68MB) or [direct link here](https://github.com/awesomebytes/alienware15r3_ubuntu14/releases/download/0.0.1/tensorflow-1.0.1-cp27-none-linux_x86_64.whl).
+You can find my `tensorflow-1.0.1-cp27-none-linux_x86_64.whl` in the [releases section](https://github.com/awesomebytes/alienware15r3_ubuntu14/releases) (68MB) or [direct link here](https://github.com/awesomebytes/alienware15r3_ubuntu14/releases/download/0.0.1/tensorflow-1.0.1-cp27-none-linux_x86_64.whl).
 If you want to skip compiling.
 
 Install latest `tflearn`:
