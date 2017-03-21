@@ -408,11 +408,14 @@ cd tensorflow
 ./configure
 ```
 
-I got as output (and my input, all default):
+I got as output (and my input, I added some flags as my CPU admits extra optimizations):
 ```bash
 ./configure 
 ~/Downloads/tensorflow ~/Downloads/tensorflow
-Please specify the location of python. [Default is /usr/bin/python]: 
+Please specify the location of python. [Default is /usr/bin/python]:
+Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native]: --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mfpmath=both --copt=-msse4.2 --config=cuda
+Do you wish to use jemalloc as the malloc implementation? [Y/n] 
+jemalloc enabled
 Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] 
 No Google Cloud Platform support will be enabled for TensorFlow
 Do you wish to build TensorFlow with Hadoop File System support? [y/N] 
@@ -442,11 +445,11 @@ INFO: All external dependencies fetched successfully.
 Configuration finished
 ```
 
-Build it with GPU support:
+Build it with GPU support and extra optimizations ([from this thread](http://stackoverflow.com/questions/41293077/how-to-compile-tensorflow-with-sse4-2-and-avx-instructions)):
 ```
-bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+bazel build -c opt --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mfpmath=both --copt=-msse4.2 --config=cuda -k //tensorflow/tools/pip_package:build_pip_package
 ```
-That was 21 minutes of compilation.
+That was 25 minutes of compilation.
 
 Create the pip package and install:
 ```
@@ -455,7 +458,7 @@ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 sudo pip install /tmp/tensorflow_pkg/tensorflow-1.0.1-cp27-none-linux_x86_64.whl
 ```
 
-You can find my `tensorflow-0.12.0rc0-cp27-none-linux_x86_64.whl` in the [releases section](https://github.com/awesomebytes/alienware15r3_ubuntu14/releases) (65MB) or [direct link here](https://github.com/awesomebytes/alienware15r3_ubuntu14/releases/download/0.0.1/tensorflow-1.0.1-cp27-none-linux_x86_64.whl).
+You can find my `tensorflow-0.12.0rc0-cp27-none-linux_x86_64.whl` in the [releases section](https://github.com/awesomebytes/alienware15r3_ubuntu14/releases) (68MB) or [direct link here](https://github.com/awesomebytes/alienware15r3_ubuntu14/releases/download/0.0.1/tensorflow-1.0.1-cp27-none-linux_x86_64.whl).
 If you want to skip compiling.
 
 Install latest `tflearn`:
