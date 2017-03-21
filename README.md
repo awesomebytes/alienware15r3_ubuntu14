@@ -499,7 +499,6 @@ I tensorflow/core/common_runtime/simple_placer.cc:827] a: (Const)/job:localhost/
 ```
 
 ## Test Tflearn installation
-**Note** that this doesn't work right now. There is an [open issue](https://github.com/tflearn/tflearn/issues/510) about it.
 
 First install:
 
@@ -510,6 +509,70 @@ sudo apt-get install python-h5py python-scipy
 Now run the test script from the tflearn docs [test_tflearn.py](test_tflearn.py):
 ```
 optirun python test_tflearn.py
+```
+
+You'll get an output like:
+```
+ 19:12:06
+~/Downloads$ python test_tflearn.py 
+Downloading Titanic dataset...
+Succesfully downloaded titanic_dataset.csv 82865 bytes.
+2017-03-21 19:12:26.354733: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-03-21 19:12:26.354754: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-03-21 19:12:26.354759: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-03-21 19:12:26.354763: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-03-21 19:12:26.354766: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-03-21 19:12:26.512376: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-03-21 19:12:26.512778: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.645
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.46GiB
+2017-03-21 19:12:26.512793: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0 
+2017-03-21 19:12:26.512798: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y 
+2017-03-21 19:12:26.512804: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+2017-03-21 19:13:45.450308: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+---------------------------------
+Run id: 6PYEA0
+Log directory: /tmp/tflearn_logs/
+---------------------------------
+Training samples: 1309
+Validation samples: 0
+--
+Training Step: 82  | total loss: 0.63943 | time: 0.941s
+| Adam | epoch: 001 | loss: 0.63943 - acc: 0.6746 -- iter: 1309/1309
+--
+Training Step: 164  | total loss: 0.62572 | time: 0.225s
+| Adam | epoch: 002 | loss: 0.62572 - acc: 0.6604 -- iter: 1309/1309
+--
+Training Step: 246  | total loss: 0.53110 | time: 0.218s
+| Adam | epoch: 003 | loss: 0.53110 - acc: 0.7426 -- iter: 1309/1309
+--
+Training Step: 328  | total loss: 0.54184 | time: 0.221s
+| Adam | epoch: 004 | loss: 0.54184 - acc: 0.7509 -- iter: 1309/1309
+--
+Training Step: 410  | total loss: 0.54874 | time: 0.215s
+| Adam | epoch: 005 | loss: 0.54874 - acc: 0.7721 -- iter: 1309/1309
+--
+Training Step: 492  | total loss: 0.51747 | time: 0.217s
+| Adam | epoch: 006 | loss: 0.51747 - acc: 0.7841 -- iter: 1309/1309
+--
+Training Step: 574  | total loss: 0.53963 | time: 0.227s
+| Adam | epoch: 007 | loss: 0.53963 - acc: 0.7770 -- iter: 1309/1309
+--
+Training Step: 656  | total loss: 0.48992 | time: 0.214s
+| Adam | epoch: 008 | loss: 0.48992 - acc: 0.7625 -- iter: 1309/1309
+--
+Training Step: 738  | total loss: 0.48196 | time: 0.225s
+| Adam | epoch: 009 | loss: 0.48196 - acc: 0.7795 -- iter: 1309/1309
+--
+Training Step: 820  | total loss: 0.49632 | time: 0.216s
+| Adam | epoch: 010 | loss: 0.49632 - acc: 0.7696 -- iter: 1309/1309
+--
+DiCaprio Surviving Rate: 0.126031458378
+Winslet Surviving Rate: 0.84097880125
+ 19:13:49
 ```
 
 
