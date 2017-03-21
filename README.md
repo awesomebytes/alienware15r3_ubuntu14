@@ -154,11 +154,12 @@ Instructions next:
 Download from Nvidia [Cuda 8.0](https://developer.nvidia.com/cuda-downloads), this is based on [jayakumar blog post](https://www.jayakumar.org/linux/gtx-1070-on-ubuntu-16-04-with-cuda-8-0-and-theano/):
 
 ```bash
-wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
 sudo apt-get update
 sudo apt-get install cuda
 ```
+This previously installed nvidia-367, now it installs nvidia-375.
 
 You may want to add to your `.bashrc`:
 ```
@@ -614,7 +615,7 @@ sudo apt-get remove bumblebee
 ```
 It will remove `bumblebee bumblebee-nvidia primus`.
 
-Now we reinstall the nvidia-367 driver.
+Now we reinstall the nvidia-367 driver. **Update**: for the latest version of CUDA it forced me to upgrade to nvidia-375. It works nicely, so this command may need to upgrade to this driver.
 ```
 sudo apt-get install --reinstall nvidia-367
 ```
@@ -637,6 +638,7 @@ sudo apt-get purge nvidia* cuda* bumblebee*
 ```
 
 Reboot, now you can login (in crappy graphics) and execute:
+**Update**: for the latest version of CUDA it forced me to upgrade to nvidia-375. It works nicely, so this command may need to upgrade to this driver.
 ```
 sudo apt-get install nvidia-367
 ```
