@@ -334,19 +334,19 @@ I'm following [abhay.harpale.net blog post](http://abhay.harpale.net/blog/machin
 
 1. Download the latest [CuDNN v5.1](https://developer.nvidia.com/cudnn). I choose the debians, note that you need to register to acess:
 
-[cuDNN v5.1 Runtime Library for Ubuntu14.04 (Deb)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod/8.0/libcudnn5_5.1.5-1+cuda8.0_amd64-deb)
+[cuDNN v5.1 Runtime Library for Ubuntu14.04 (Deb)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod_20161129/8.0/libcudnn5_5.1.10-1+cuda8.0_amd64-deb)
 
-[cuDNN v5.1 Developer Library for Ubuntu14.04 (Deb)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod/8.0/libcudnn5-dev_5.1.5-1+cuda8.0_amd64-deb)
+[cuDNN v5.1 Developer Library for Ubuntu14.04 (Deb)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod_20161129/8.0/libcudnn5-dev_5.1.10-1+cuda8.0_amd64-deb)
 
-[cuDNN v5 Code Samples and User Guide (Deb)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod/8.0/libcudnn5-doc_5.1.5-1+cuda8.0_amd64-deb)
+[cuDNN v5 Code Samples and User Guide (Deb)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod_20161129/8.0/libcudnn5-doc_5.1.10-1+cuda8.0_amd64-deb)
 
 2. Install it.
 
 ```bash
 $ ls
-libcudnn5-dev_5.1.5-1+cuda8.0_amd64.deb
-libcudnn5_5.1.5-1+cuda8.0_amd64.deb
-libcudnn5-doc_5.1.5-1+cuda8.0_amd64.deb
+libcudnn5-dev_5.1.10-1+cuda8.0_amd64.deb
+libcudnn5_5.1.10-1+cuda8.0_amd64.deb
+libcudnn5-doc_5.1.10-1+cuda8.0_amd64.deb
 
 $ sudo dpkg -i libcudnn5*.deb
 ```
